@@ -10,7 +10,7 @@ kubeAPI: # same as `--api-port myhost.my.domain:6445` (where the name would reso
 image: rancher/k3s:v1.20.4-k3s1
 subnet: "10.0.0.0/16"
 volumes:
-  - volume: $PWD/manifests/addons:/var/lib/rancher/k3s/server/manifests/addons
+  - volume: $PWD/manifests/cluster:/var/lib/rancher/k3s/server/manifests/cluster
     nodeFilters:
       - server:0
       - agent:*

@@ -4,7 +4,7 @@ metadata:
   labels:
     run: nginx
   name: nginx
-  namespace: dev
+  namespace: prod
 spec:
   containers:
   - image: nginx:alpine
@@ -16,7 +16,7 @@ metadata:
   labels:
     run: nginx
   name: nginx
-  namespace: dev
+  namespace: prod
 spec:
   type: ClusterIP
   selector:

@@ -4,10 +4,9 @@ metadata:
   labels:
     run: nginx
   name: nginx
-  namespace: dev
 spec:
   containers:
-  - image: nginx
+  - image: nginx:latest
     name: nginx
 ---
 apiVersion: v1
@@ -16,7 +15,6 @@ metadata:
   labels:
     run: nginx
   name: nginx
-  namespace: dev
 spec:
   type: ClusterIP
   selector:

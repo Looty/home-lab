@@ -15,7 +15,7 @@ volumes:
       - server:0
       - agent:*
 ports:
-  - port: 9001:30777 # same as `--port '8080:80@loadbalancer'`
+  - port: 9001:30777 # Portainer will be available in http://localhost:9001/
     nodeFilters:
       - loadbalancer
 options:

@@ -1,0 +1,14 @@
+version: '3'
+
+env:
+  CLUSTER_CONFIG_PATH: ./cluster.yaml
+
+tasks:
+  init:
+    cmds:
+      - k3d cluster create -c $CLUSTER_CONFIG_PATH
+    silent: true
+  destroy:
+    cmds:
+      - k3d cluster delete mycluster
+    silent: true

@@ -1,0 +1,21 @@
+apiVersion: k3d.io/v1alpha4
+kind: Simple
+metadata:
+  name: mycluster
+servers: 1
+agents: 1
+image: rancher/k3s:v1.20.4-k3s1
+subnet: "10.0.0.0/16"
+volumes:
+  - volume: $PWD/manifests:/var/lib/rancher/k3s/server/manifests/extra
+    nodeFilters:
+      - server:0
+      - agent:*
+options:
+  k3d:
+    wait: true
+    timeout: "60s"
+    disableLoadbalancer: true
+  kubeconfig:
+    updateDefaultKubeconfig: true # add new cluster to your default Kubeconfig
+    switchCurrentContext: true # also set current-context to the new cluster's context

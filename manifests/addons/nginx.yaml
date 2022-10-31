@@ -6,7 +6,7 @@ metadata:
   name: nginx
 spec:
   containers:
-  - image: nginx:latest
+  - image: nginx:alpine
     name: nginx
 ---
 apiVersion: v1

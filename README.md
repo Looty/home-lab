@@ -16,7 +16,10 @@
 
 ## Setup
 ```yaml
-Initialize the cluster: task init
-Destroy the cluster: task destroy
-View available commands: task -a
+Initialize the cluster:
+    task init
+Destroy the cluster:
+    task destroy
+View available commands:
+    task -a
 ```

@@ -7,7 +7,7 @@ metadata:
   namespace: dev
 spec:
   containers:
-  - image: nginx:alpine
+  - image: nginx:stable-alpine
     name: nginx
 ---
 apiVersion: v1

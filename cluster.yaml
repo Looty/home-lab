@@ -1,7 +1,5 @@
 apiVersion: k3d.io/v1alpha4
 kind: Simple
-metadata:
-  name: lab
 servers: 1
 agents: 1
 kubeAPI: # same as `--api-port myhost.my.domain:6445` (where the name would resolve to 127.0.0.1)
@@ -15,7 +13,7 @@ volumes:
       - server:0
       - agent:*
 ports:
-  - port: 9001:30777 # Portainer will be available in http://localhost:9001/
+  - port: 9001:30777 # Portainer
     nodeFilters:
       - loadbalancer
 options:

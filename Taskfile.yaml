@@ -1,19 +1,22 @@
 version: '3'
 
 env:
+  CLUSTER_NAME: lab
   CLUSTER_CONFIG_PATH: ./cluster.yaml
 
 tasks:
   init:
     cmds:
-      - k3d cluster create -c $CLUSTER_CONFIG_PATH
+      - k3d cluster create $CLUSTER_NAME -c $CLUSTER_CONFIG_PATH
       - kubectl apply -n portainer -f https://downloads.portainer.io/ce2-16/portainer.yaml
     desc:
-      Initialize the k3d cluster
+      Initialize the k3d cluster, along with Portainer
+
+      Portainer is available at http://localhost:9001/
     silent: true
   destroy:
     cmds:
-      - k3d cluster delete mycluster
+      - k3d cluster delete $CLUSTER_NAME
     desc:
       Destroy the k3d cluster
     silent: true

@@ -7,8 +7,12 @@ tasks:
   init:
     cmds:
       - k3d cluster create -c $CLUSTER_CONFIG_PATH
+    desc:
+      Initialize the k3d cluster
     silent: true
   destroy:
     cmds:
       - k3d cluster delete mycluster
+    desc:
+      Destroy the k3d cluster
     silent: true

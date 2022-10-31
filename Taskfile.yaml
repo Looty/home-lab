@@ -7,6 +7,7 @@ tasks:
   init:
     cmds:
       - k3d cluster create -c $CLUSTER_CONFIG_PATH
+      - kubectl apply -n portainer -f https://downloads.portainer.io/ce2-16/portainer.yaml
     desc:
       Initialize the k3d cluster
     silent: true

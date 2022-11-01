@@ -16,7 +16,7 @@ ports:
   - port: 8080:30010 # ArgoCD
     nodeFilters:
       - loadbalancer
-  - port: 4000:4000 # Go default web apps port-forward
+  - port: 4000:31000 # Go default web apps port-forward
     nodeFilters:
       - loadbalancer
 options:

@@ -7,7 +7,7 @@ metadata:
   namespace: dev
 spec:
   containers:
-  - image: nginx:stable-alpine
+  - image: nginx:alpine
     name: nginx
 ---
 apiVersion: v1
@@ -18,10 +18,11 @@ metadata:
   name: nginx
   namespace: dev
 spec:
-  type: ClusterIP
+  type: NodePort
   selector:
     run: nginx
   ports:
   - port: 80
     protocol: TCP
     targetPort: 80
+    nodePort: 31000

@@ -13,7 +13,10 @@ volumes:
       - server:0
       - agent:*
 ports:
-  - port: 9001:30777 # Portainer
+  - port: 8080:30010 # ArgoCD
+    nodeFilters:
+      - loadbalancer
+  - port: 4000-4010:31000-31010 # 10 Available ports forwarded for different web services
     nodeFilters:
       - loadbalancer
 options:

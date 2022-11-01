@@ -10,9 +10,10 @@ tasks:
       - k3d cluster create $CLUSTER_NAME -c $CLUSTER_CONFIG_PATH
       - kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/v2.4.14/manifests/install.yaml
       - kubectl patch svc argocd-server -n argocd --type='json' -p '[{"op":"replace","path":"/spec/type","value":"NodePort"},{"op":"replace","path":"/spec/ports/0/nodePort","value":30010}]'
+      - sleep 180
       - kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d; echo
     desc:
-      Initialize the k3d cluster, along with ArgoCD
+      Initialize the k3d cluster, along with ArgoCD - https://localhost:8080/
     silent: true
   destroy:
     cmds:

@@ -4,7 +4,7 @@
 
 <p align="center">
     Configuration of my home-lab kubernetes cluster<br>
-    Uses K3d with Portainer built-in (for GitOps)
+    Uses K3d with ArgoCD built-in (for GitOps)
 </p>
 
 ## Prerequisites

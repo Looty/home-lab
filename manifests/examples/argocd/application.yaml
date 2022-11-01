@@ -19,7 +19,7 @@ spec:
   project: guestbook
   source:
     repoURL: https://github.com/Looty/home-lab/
-    targetRevision: HEAD
+    targetRevision: argocd
     path: manifests/examples/app
   destination:
     server: https://kubernetes.default.svc

@@ -13,7 +13,10 @@ volumes:
       - server:0
       - agent:*
 ports:
-  - port: 8080:8080 # Default web apps port-forward
+  - port: 8080:30010 # ArgoCD
+    nodeFilters:
+      - loadbalancer
+  - port: 4000:4000 # Go default web apps port-forward
     nodeFilters:
       - loadbalancer
 options:

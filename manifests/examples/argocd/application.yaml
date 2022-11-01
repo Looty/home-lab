@@ -1,26 +1,23 @@
 apiVersion: argoproj.io/v1alpha1
-kind: AppProject
-metadata:
-  name: guestbook
-  namespace: argocd
-spec:
-  sourceRepos:
-    - '*'
-  destinations:
-    - namespace: guestbook
-      server: https://kubernetes.default.svc
----
-apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: guestbook
-  namespace: argocd
+  name: nginx
 spec:
-  project: guestbook
-  source:
-    repoURL: https://github.com/Looty/home-lab/
-    targetRevision: argocd
-    path: manifests/examples/app
   destination:
-    server: https://kubernetes.default.svc
-    namespace: guestbook
+    name: ''
+    namespace: dev
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: manifests/examples/
+    repoURL: 'https://github.com/Looty/home-lab'
+    targetRevision: argocd
+    directory:
+      recurse: true
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: false
+    syncOptions:
+      - CreateNamespace=true
+      - PrunePropagationPolicy=foreground

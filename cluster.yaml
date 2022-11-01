@@ -13,7 +13,7 @@ volumes:
       - server:0
       - agent:*
 ports:
-  - port: 9001:30777 # Portainer
+  - port: 8080:8080 # Default web apps port-forward
     nodeFilters:
       - loadbalancer
 options:

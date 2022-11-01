@@ -8,11 +8,9 @@ tasks:
   init:
     cmds:
       - k3d cluster create $CLUSTER_NAME -c $CLUSTER_CONFIG_PATH
-      - kubectl apply -n portainer -f https://downloads.portainer.io/ce2-16/portainer.yaml
+      - kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/core-install.yaml
     desc:
-      Initialize the k3d cluster, along with Portainer
-
-      Portainer is available at http://localhost:9001/
+      Initialize the k3d cluster, along with core ArgoCD
     silent: true
   destroy:
     cmds:

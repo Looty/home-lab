@@ -22,7 +22,7 @@ spec:
   selector:
     run: nginx
   ports:
-  - port: 4000
+  - port: 80
     protocol: TCP
-    targetPort: 4000
-    nodePort: 30010
+    targetPort: 80
+    nodePort: 4000
